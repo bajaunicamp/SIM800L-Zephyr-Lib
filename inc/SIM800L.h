@@ -15,8 +15,9 @@ struct s_server{
     int buffer_size;
 };
 
-int init_input();
+int init_gps_in();
 int init_server();
-void input_callback(const struct device *dev, struct uart_event *evt, void *user_data);
+void gps_in_callback(const struct device *dev, struct uart_event *evt, void *user_data);
+void server_callback(const struct device *dev, struct uart_event *evt, void *user_data);
 
 #endif
