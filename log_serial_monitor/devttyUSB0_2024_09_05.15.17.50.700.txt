@@ -1,0 +1,2 @@
+AT+CIPMODE=0
+OK
