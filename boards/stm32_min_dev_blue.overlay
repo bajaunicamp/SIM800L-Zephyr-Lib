@@ -89,7 +89,7 @@
     pinctrl-names = "default";
 
     // Baudrate do USART2
-    current-speed = <9600>;
+    current-speed = <115200>;
     status = "okay";
 };
 

@@ -3,6 +3,8 @@
 
 #include "zephyr/drivers/uart.h"
 
+/** */
+
 /**
  * @struct s_input_dev
  * @brief Representa a conexão UART com o GPS
@@ -37,10 +39,16 @@ void gps_in_callback(const struct device *dev, struct uart_event *evt, void *use
 /**
  * @brief Estabelece o canal de comunicação UART do STM com o SIM800L e estabelece uma conexão entre o SIM800L e o servidor
  */
-int init_server();
+int init_server(unsigned int port);
 
-// TODO: Criar callback do servidor para poder ler as respostas
-void server_callback(const struct device *dev, struct uart_event *evt, void *user_data);
+/**
+ * @brief 
+ * 
+ * @param server 
+ * @param evt 
+ * @param user_data 
+ */
+void server_callback(const struct device *server, struct uart_event *evt, void *user_data);
 
 /**
  * @brief Envia uma mensagem ao servidor
