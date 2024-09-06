@@ -6,8 +6,14 @@
 
 LOG_MODULE_DECLARE();
 
-struct s_server server;
+struct s_server server; //UART3
 struct s_input_dev gps_in;
+
+void uart_poll_out_str(const struct device *dev, unsigned char *out_str, unsigned int len){
+    for(int i = 0; i < len; i++){
+        uart_poll_out(dev, out_str[i]);
+    }
+}
 
 int init_server(unsigned int port){
     // Inicializando a comunicação UART
@@ -35,50 +41,52 @@ int init_server(unsigned int port){
     // TODO: substituir o delay por uma verificação de conexão
     LOG_INF("[SIM800L]: teste AT");
     sprintf(temp, "AT\r\n");
-    uart_tx(server.dev, temp, strlen(temp), 100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
 
     k_msleep(10000);
 
     // Select TCIP Application Mode
     LOG_INF("Select TCIP Application Mode");
     sprintf(temp, "AT+CIPMODE=0\r\n");
-    uart_tx(server.dev, temp, strlen(temp), 100);
-    k_msleep(100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
+    k_msleep(1000);
 
     // Startup single IP connection
     LOG_INF("Startup single IP connection");
 	sprintf(temp, "AT+CIPMUX=0\r\n");
-    uart_tx(server.dev, temp, strlen(temp), 100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
     k_msleep(1000);
 
 	// Attach from GPRS Service
     LOG_INF("Attach from GPRS Service");
 	sprintf(temp, "AT+CGATT=1\r\n");
-    uart_tx(server.dev, temp, strlen(temp), 100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
     k_msleep(1000);
 
 	// Start task and set APN
     LOG_INF("Start task and set APN");
-	sprintf(temp, "AT+CSTT=\"timbrasil.br\",\"tim\",\"tim\"\r\n");
-    uart_tx(server.dev, temp, strlen(temp), 100);
+    // TODO: adicionar parâmetro à função que informa a operadora sendo usada
+	//sprintf(temp, "AT+CSTT=\"timbrasil.br\",\"tim\",\"tim\"\r\n");
+    sprintf(temp, "AT+CSTT=\"zap.vivo.com.br\",\"Vivo ZAP\",\"Vivo ZAP\"\r\n");
+    uart_poll_out_str(server.dev, temp, strlen(temp));
     k_msleep(3000);
 
 	// Bring up wireless connection with GPRS  or CSD
     LOG_INF("Bring up wireless connection with GPRS  or CSD");
 	sprintf(temp, "AT+CIICR\r\n");
-    uart_tx(server.dev, temp, strlen(temp), 100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
     k_msleep(3000);
 
 	// Get Local IP address
     LOG_INF("Get Local IP address");
 	sprintf(temp, "AT+CIFSR\r\n");
-    uart_tx(server.dev, temp, strlen(temp), 100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
     k_msleep(1000);
 
 	// Start up TCP connection
     LOG_INF("Start up TCP connection");
 	sprintf(temp, "AT+CIPSTART=\"TCP\",\"tcp://0.tcp.sa.ngrok.io\",\"%05d\"\r\n", port);
-    uart_tx(server.dev, temp, strlen(temp), 100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
     server.connected = true;
     k_msleep(1000);
 
@@ -94,12 +102,12 @@ void send_server(char *message){
     char temp[100];
 
     sprintf(temp, "AT+CIPSEND=%d\r\n", strlen(message));
-    uart_tx(server.dev, temp, strlen(temp), 100);
-    k_msleep(100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
+    k_msleep(1000);
 
     sprintf(temp, "%s\r\n", message);
-    uart_tx(server.dev, temp, strlen(temp), 100);
-    k_msleep(100);
+    uart_poll_out_str(server.dev, temp, strlen(temp));
+    k_msleep(1000);
 }
 
 void server_callback(const struct device *dev, struct uart_event *evt, void *user_data){
@@ -113,6 +121,7 @@ void server_callback(const struct device *dev, struct uart_event *evt, void *use
 
         case UART_RX_DISABLED:
             //printk("disabled");
+            memset(server.buffer, '.', 50);
             uart_rx_enable(server.dev, server.buffer, server.buffer_size, 1000);
             break;
     }

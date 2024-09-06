@@ -1,0 +1,41 @@
+--------------------------------------06/09--------------------------------------
+    Como esse é o começo do devlog, acho que vão ter várias coisas nesse primeiro
+registro, que foram acumuladas da semana anterior e dos dias anteriores dessa semana.
+
+1. O que eu aprendi sobre o básico de programação de sistemas embarcados
+    Acho que a principal coisa que eu aprendi é que, para o microprocessador, que vai
+executar o meu programa, existem apenas canais de comunicação. No começo eu fiquei pensando
+bastante sobre como iria representar o SIM800L no meu código, até eu entender que a única
+coisa que eu precisava representar é o canal de comunicação UART entre o meu STM e o SIM800L.
+Isso fica muito claro na definição do struct s_server, que contém essencialmente as informações
+necessárias para se estabelecer um canal UART genérico (o buffer que receberá respostas e o
+device que informa ao programa quais pinos serão usados para transmitir informação).
+    O que faz essa biblioteca ser específica para o SIM800L é a forma que eu uso o canal UART,
+para me comunicar com esse módulo.
+
+2. Como debugar meu código (mais especificamente para quando estiver usando UART)
+    Quando estou debugando um programa de computador comum, eu consigo ver tudo o que está
+acontecendo a partir do debugger. Já quando estou debugando um sistema embarcado, os únicos
+processos e informações que consigo ver a partir do debugger são aqueles que ocorrem dentro do
+STM.
+    Durante o desenvolvimento da biblioteca, tive problemas com a comunicação entre o STM e o
+SIM800L. Para inspecionar o que estava acontecendo no canal entre os dois dispositivos, usei um
+HW-417-V1.2 (um chip vermelho usado para ler e enviar mensagens em um canal UART, vou chamar apenas
+de HW). Eu usei ele para ler o que o SIM800L estava respondendo para as mensagens que o STM enviava.
+    Então, acho que essa é uma boa dica para debugar canais de comunicação UART. Só acho importante
+lembrar que, para que a comunicação UART funcione apropriadamente, é preciso ter exatamente 1 TX e 
+1 RX por fio. Ou seja, quando quiser usar o HW para ler a resposta do SIM800L, por exemplo, é preciso
+desconectá-lo do STM.
+---------------------------------------------------------------------------------
+
+--------------------------------------06/09--------------------------------------
+    Estou iniciando mais um registro nesse dia, após a reunião de trabalho.
+    Hoje eu fiquei tentando fazer com que o código consiga estabelecer uma conexão
+com o servidor. O problema que estava acontecendo é que a transmissão de mensagens
+por UART do STM com o servidor não estava ocorrendo direito, devido ao uso da função
+assíncrona uart_tx. Ainda não entendi muito bem como isso funciona, mas as strings que
+deveriam ser transmitidas para o SIM800L estavam sendo transmitidas parcialmente,
+provavelmente enquanto a função sprintf ainda estava escrevendo a string no buffer.
+Para resolver isso, passei a usar funções síncronas de transmissão. Porém, não existe
+uma função síncrona para transmitir uma string, apenas um char individual, entao criei
+a função uart_poll_out_str, para transmitir uma string.

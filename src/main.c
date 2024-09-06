@@ -13,6 +13,7 @@ LOG_MODULE_REGISTER();
 const struct gpio_dt_spec *const led = &(const struct gpio_dt_spec)GPIO_DT_SPEC_GET(DT_NODELABEL(led0), gpios);
 
 int main(){
+  init_server(16317);
 
   while(1){
     k_msleep(1);
