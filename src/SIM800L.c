@@ -7,7 +7,6 @@
 LOG_MODULE_DECLARE();
 
 struct s_server server; //UART3
-struct s_input_dev gps_in;
 
 void uart_poll_out_str(const struct device *dev, unsigned char *out_str, unsigned int len){
     for(int i = 0; i < len; i++){
