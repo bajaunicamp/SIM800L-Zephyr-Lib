@@ -15,7 +15,7 @@ void uart_poll_out_str(const struct device *dev, unsigned char *out_str, unsigne
     }
 }
 
-int init_server(unsigned int port){
+int init_server(unsigned int port, enum OPERADORA op){
     // Inicializando a comunicação UART
     server.dev = DEVICE_DT_GET(DT_ALIAS(sim800l));
     server.buffer_size = 50;
@@ -65,9 +65,17 @@ int init_server(unsigned int port){
 
 	// Start task and set APN
     LOG_INF("Start task and set APN");
-    // TODO: adicionar parâmetro à função que informa a operadora sendo usada
-	//sprintf(temp, "AT+CSTT=\"timbrasil.br\",\"tim\",\"tim\"\r\n");
-    sprintf(temp, "AT+CSTT=\"zap.vivo.com.br\",\"Vivo ZAP\",\"Vivo ZAP\"\r\n");
+    switch(op){
+        case VIVO:
+            sprintf(temp, "AT+CSTT=\"zap.vivo.com.br\",\"Vivo ZAP\",\"Vivo ZAP\"\r\n");
+            break;
+        case TIM:
+            sprintf(temp, "AT+CSTT=\"timbrasil.br\",\"tim\",\"tim\"\r\n");
+            break;
+        case OUTRO:
+            sprintf(temp, "AT+CSTT=\"[arg1]\",\"[arg2]\",\"[arg3]\"\r\n");
+            break;
+    }
     uart_poll_out_str(server.dev, temp, strlen(temp));
     k_msleep(3000);
 
