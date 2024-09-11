@@ -13,9 +13,10 @@ LOG_MODULE_REGISTER();
 const struct gpio_dt_spec *const led = &(const struct gpio_dt_spec)GPIO_DT_SPEC_GET(DT_NODELABEL(led0), gpios);
 
 int main(){
-  init_server(16317, VIVO);
+  init_server(11547, TIM);
 
   while(1){
+    send_server("oi");
     k_msleep(1);
   }
 }

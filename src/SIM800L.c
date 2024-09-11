@@ -8,6 +8,8 @@ LOG_MODULE_DECLARE();
 
 struct s_server server; //UART3
 
+static void server_callback(const struct device *dev, struct uart_event *evt, void *user_data);
+
 void uart_poll_out_str(const struct device *dev, unsigned char *out_str, unsigned int len){
     for(int i = 0; i < len; i++){
         uart_poll_out(dev, out_str[i]);
@@ -95,7 +97,7 @@ int init_server(unsigned int port, enum OPERADORA op){
 	sprintf(temp, "AT+CIPSTART=\"TCP\",\"tcp://0.tcp.sa.ngrok.io\",\"%05d\"\r\n", port);
     uart_poll_out_str(server.dev, temp, strlen(temp));
     server.connected = true;
-    k_msleep(1000);
+    k_msleep(5000);
 
 
 	// Enviar mensagem pro servidor que é o baja que tá conectando
