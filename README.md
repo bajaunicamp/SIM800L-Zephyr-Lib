@@ -27,3 +27,4 @@ Logs que mostram o que o SIM800L está enviando para o STM serão exibidos na fo
 - Os delays presentes nas funções podem tornar o processo lento. Para atenuar esse problema, seria ideal substituir os delays com tempo fixo no código por uma lógica que espere receber uma confirmação do SIM800L para prosseguir.
 - As funções não verificam se o estabelecimento da conexão ou o envio de mensagens foi bem sucedido. Para saber se está tudo rodando corretamente é necessário estar constantemente observando o que o servidor está recebendo.
 - Por algum motivo, meu chip (Lucas) da Vivo não está conseguindo providenciar conexão a internet ao SIM800L. Talvez haja um problema com chips da Vivo.
+- Este código foi testado com um chip da TIM
