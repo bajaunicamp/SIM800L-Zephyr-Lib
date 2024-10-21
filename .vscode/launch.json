@@ -5,9 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Zephyr IDE: Debug",
+            "cwd": "${workspaceFolder}",
+            "gdbPath": "${command:zephyr-ide.get-gdb-path}",
+            "executable": "${command:zephyr-ide.get-active-build-path}/zephyr/zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "stutil",
+            "interface": "swd",
+            "device": "STM32F103",
+        },
+        {
             "cwd": "${workspaceFolder}",
             "name": "Debug with ST-Link",
-            "gdbPath": "${command:zephyr-ide.get-toolchain-path}/arm-zephyr-eabi/arm-zephyr-eabi-gdb",
+            "gdbPath": "${command:zephyr-ide.get-toolchain-path}/zephyr-sdk-0.16.8/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
             "executable": "${command:zephyr-ide.get-active-build-path}/zephyr/zephyr.elf",
             "request": "launch",
             "type": "cortex-debug",

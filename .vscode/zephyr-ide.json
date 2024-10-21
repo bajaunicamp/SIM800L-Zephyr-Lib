@@ -1,16 +1,16 @@
 {
   "projects": {
-    "template": {
+    "SIM800L-Zephyr-Lib": {
       "rel_path": "",
-      "name": "template",
+      "name": "SIM800L-Zephyr-Lib",
       "buildConfigs": {
-        "build/stm32_min_dev_blue": {
-          "relBoardDir": "../../../../../.zephyr_ide/external/zephyr/boards",
-          "board": "stm32_min_dev_blue",
-          "relBoardSubDir": "/home/gian/.zephyr_ide/external/zephyr/boards/arm/stm32_min_dev",
-          "name": "build/stm32_min_dev_blue",
+        "build/stm32_min_dev": {
+          "relBoardDir": "../../.zephyr_ide/external/zephyr/boards",
+          "board": "stm32_min_dev",
+          "relBoardSubDir": "/home/lucas/.zephyr_ide/external/zephyr/boards/others/stm32_min_dev",
+          "name": "build/stm32_min_dev",
           "westBuildArgs": "",
-          "westBuildCMakeArgs": " -DCONFIG_NO_OPTIMIZATIONS=y",
+          "westBuildCMakeArgs": " -DCONFIG_SIZE_OPTIMIZATIONS=y ",
           "confFiles": {
             "config": [],
             "extraConfig": [],
@@ -23,9 +23,7 @@
               "name": "openocd",
               "args": ""
             }
-          },
-          "launchTarget": "Debug with ST-Link",
-          "buildDebugTarget": "Debug with ST-Link",
+          }
         }
       },
       "confFiles": {

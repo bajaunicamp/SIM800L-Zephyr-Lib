@@ -1,3 +1,13 @@
 {
-    "C_Cpp.default.compileCommands": "build/compile_commands.json",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/.vscode/compile_commands.json",
+    "zephyr-ide.use-zephyr-ide-json": true,
+    "zephyr-ide.projects": null,
+    "files.associations": {
+        "sim800l.h": "c",
+        "kernel.h": "c",
+        "uart.h": "c"
+    },
+    "terminal.integrated.defaultProfile.linux": "Zephyr IDE Terminal",
+    "cmake.configureOnOpen": false,
+    "todo-tree.tree.scanMode": "workspace only"
 }
