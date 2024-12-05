@@ -3,7 +3,7 @@
 
 #include "zephyr/drivers/uart.h"
 
-enum OPERADORA{TIM, VIVO, OUTRO};
+enum OPERADORA{TIM, VIVO, CLARO, OUTRO};
 
 /**
  * @struct s_server

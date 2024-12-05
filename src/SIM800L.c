@@ -73,6 +73,9 @@ int init_server(unsigned int port, enum OPERADORA op){
         case TIM:
             sprintf(temp, "AT+CSTT=\"timbrasil.br\",\"tim\",\"tim\"\r\n");
             break;
+        case CLARO:
+            sprintf(temp, "AT+CSTT=\"java.claro.com.br\",\"Claro\",\"Claro\"\r\n");
+            break;
         case OUTRO:
             sprintf(temp, "AT+CSTT=\"[arg1]\",\"[arg2]\",\"[arg3]\"\r\n");
             break;
