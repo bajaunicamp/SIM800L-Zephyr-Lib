@@ -97,7 +97,7 @@ int init_server(unsigned int port, enum OPERADORA op){
 
 	// Start up TCP connection
     LOG_INF("Start up TCP connection");
-	sprintf(temp, "AT+CIPSTART=\"TCP\",\"tcp://0.tcp.sa.ngrok.io\",\"%05d\"\r\n", port);
+	sprintf(temp, "AT+CIPSTART=\"TCP\",\"0.tcp.sa.ngrok.io\",\"%05d\"\r\n", port);
     uart_poll_out_str(server.dev, temp, strlen(temp));
     server.connected = true;
     k_msleep(5000);
