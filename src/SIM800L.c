@@ -68,7 +68,7 @@ int init_server(unsigned int port, enum OPERADORA op){
     LOG_INF("Start task and set APN");
     switch(op){
         case VIVO:
-            sprintf(temp, "AT+CSTT=\"zap.vivo.com.br\",\"Vivo ZAP\",\"Vivo ZAP\"\r\n");
+            sprintf(temp, "AT+CSTT=\"zap.vivo.com.br\",\"vivo\",\"vivo\"\r\n");
             break;
         case TIM:
             sprintf(temp, "AT+CSTT=\"timbrasil.br\",\"tim\",\"tim\"\r\n");
