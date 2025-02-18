@@ -1,0 +1,73 @@
+\doxysection{Referência da Estrutura s\+\_\+server}
+\hypertarget{structs__server}{}\label{structs__server}\index{s\_server@{s\_server}}
+
+
+Representa a conexão UART com o SIM800L.  
+
+
+
+
+{\ttfamily \#include $<$SIM800\+L.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+const struct device \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structs__server_a43e4ce3ebaf04d6a7b975adc96cb064f}{dev}}
+\begin{DoxyCompactList}\small\item\em Referência ao device da device tree que representa o canal UART sendo usado. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structs__server_adcda4113d19b00fef0e0f219212e41b0}{buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer no qual serão registradas mensagens recebidas através de callback. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structs__server_a6a6b8406964925141f9630245d786cb1}{buffer\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Número de caracteres do buffer que armazena as mensagens recebidas por callback. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structs__server_a93783023ff9e0d0082b2e7de1a0a1f7c}{connected}}
+\begin{DoxyCompactList}\small\item\em Booleano que registra se há conexão com o servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Representa a conexão UART com o SIM800L. 
+
+\doxysubsection{Atributos}
+\Hypertarget{structs__server_adcda4113d19b00fef0e0f219212e41b0}\index{s\_server@{s\_server}!buffer@{buffer}}
+\index{buffer@{buffer}!s\_server@{s\_server}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{structs__server_adcda4113d19b00fef0e0f219212e41b0} 
+char\texorpdfstring{$\ast$}{*} s\+\_\+server\+::buffer}
+
+
+
+Buffer no qual serão registradas mensagens recebidas através de callback. 
+
+\Hypertarget{structs__server_a6a6b8406964925141f9630245d786cb1}\index{s\_server@{s\_server}!buffer\_size@{buffer\_size}}
+\index{buffer\_size@{buffer\_size}!s\_server@{s\_server}}
+\doxysubsubsection{\texorpdfstring{buffer\_size}{buffer\_size}}
+{\footnotesize\ttfamily \label{structs__server_a6a6b8406964925141f9630245d786cb1} 
+int s\+\_\+server\+::buffer\+\_\+size}
+
+
+
+Número de caracteres do buffer que armazena as mensagens recebidas por callback. 
+
+\Hypertarget{structs__server_a93783023ff9e0d0082b2e7de1a0a1f7c}\index{s\_server@{s\_server}!connected@{connected}}
+\index{connected@{connected}!s\_server@{s\_server}}
+\doxysubsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily \label{structs__server_a93783023ff9e0d0082b2e7de1a0a1f7c} 
+bool s\+\_\+server\+::connected}
+
+
+
+Booleano que registra se há conexão com o servidor. 
+
+\Hypertarget{structs__server_a43e4ce3ebaf04d6a7b975adc96cb064f}\index{s\_server@{s\_server}!dev@{dev}}
+\index{dev@{dev}!s\_server@{s\_server}}
+\doxysubsubsection{\texorpdfstring{dev}{dev}}
+{\footnotesize\ttfamily \label{structs__server_a43e4ce3ebaf04d6a7b975adc96cb064f} 
+const struct device\texorpdfstring{$\ast$}{*} s\+\_\+server\+::dev}
+
+
+
+Referência ao device da device tree que representa o canal UART sendo usado. 
+
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{_s_i_m800_l_8h}{SIM800\+L.\+h}}\end{DoxyCompactItemize}

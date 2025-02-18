@@ -1,0 +1,86 @@
+\doxysection{Referência do Arquivo inc/\+SIM800L.h}
+\hypertarget{_s_i_m800_l_8h}{}\label{_s_i_m800_l_8h}\index{inc/SIM800L.h@{inc/SIM800L.h}}
+{\ttfamily \#include "{}zephyr/drivers/uart.\+h"{}}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__server}{s\+\_\+server}}
+\begin{DoxyCompactList}\small\item\em Representa a conexão UART com o SIM800L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db}{OPERADORA}} \{ \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dba7d875ca5d8cd7d6ad4ec679a3c301da3}{TIM}}
+, \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbabd126c6febee221aaf6e3945dd74083a}{VIVO}}
+, \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbab89d6ea09a98c6e094ac51795dad8b4a}{CLARO}}
+, \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbaaaf8d1683a4b72d61d07c3dfc6b10999}{OUTRO}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_s_i_m800_l_8h_a5eabcb207695d15a38aac4c2c91de903}{init\+\_\+server}} (unsigned int port, enum \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db}{OPERADORA}} op)
+\begin{DoxyCompactList}\small\item\em Estabelece o canal de comunicação UART do STM com o SIM800L e estabelece uma conexão entre o SIM800L e o servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_i_m800_l_8h_a6a13d6f8254f2d5724cd58e721a2a3d9}{send\+\_\+server}} (char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Envia uma mensagem ao servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumerações}
+\Hypertarget{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db}\index{SIM800L.h@{SIM800L.h}!OPERADORA@{OPERADORA}}
+\index{OPERADORA@{OPERADORA}!SIM800L.h@{SIM800L.h}}
+\doxysubsubsection{\texorpdfstring{OPERADORA}{OPERADORA}}
+{\footnotesize\ttfamily \label{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db} 
+enum \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db}{OPERADORA}}}
+
+\begin{DoxyEnumFields}[2]{Enumeradores}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM@{TIM}!SIM800L.h@{SIM800L.h}}\index{SIM800L.h@{SIM800L.h}!TIM@{TIM}}}\Hypertarget{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dba7d875ca5d8cd7d6ad4ec679a3c301da3}\label{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dba7d875ca5d8cd7d6ad4ec679a3c301da3} 
+TIM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VIVO@{VIVO}!SIM800L.h@{SIM800L.h}}\index{SIM800L.h@{SIM800L.h}!VIVO@{VIVO}}}\Hypertarget{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbabd126c6febee221aaf6e3945dd74083a}\label{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbabd126c6febee221aaf6e3945dd74083a} 
+VIVO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLARO@{CLARO}!SIM800L.h@{SIM800L.h}}\index{SIM800L.h@{SIM800L.h}!CLARO@{CLARO}}}\Hypertarget{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbab89d6ea09a98c6e094ac51795dad8b4a}\label{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbab89d6ea09a98c6e094ac51795dad8b4a} 
+CLARO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OUTRO@{OUTRO}!SIM800L.h@{SIM800L.h}}\index{SIM800L.h@{SIM800L.h}!OUTRO@{OUTRO}}}\Hypertarget{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbaaaf8d1683a4b72d61d07c3dfc6b10999}\label{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbaaaf8d1683a4b72d61d07c3dfc6b10999} 
+OUTRO&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Funções}
+\Hypertarget{_s_i_m800_l_8h_a5eabcb207695d15a38aac4c2c91de903}\index{SIM800L.h@{SIM800L.h}!init\_server@{init\_server}}
+\index{init\_server@{init\_server}!SIM800L.h@{SIM800L.h}}
+\doxysubsubsection{\texorpdfstring{init\_server()}{init\_server()}}
+{\footnotesize\ttfamily \label{_s_i_m800_l_8h_a5eabcb207695d15a38aac4c2c91de903} 
+int init\+\_\+server (\begin{DoxyParamCaption}\item[{unsigned int}]{port}{, }\item[{enum \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db}{OPERADORA}}}]{op}{}\end{DoxyParamCaption})}
+
+
+
+Estabelece o canal de comunicação UART do STM com o SIM800L e estabelece uma conexão entre o SIM800L e o servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em port} & Porta do servidor \\
+\hline
+{\em op} & Operadora do chip sendo usado \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_s_i_m800_l_8h_a6a13d6f8254f2d5724cd58e721a2a3d9}\index{SIM800L.h@{SIM800L.h}!send\_server@{send\_server}}
+\index{send\_server@{send\_server}!SIM800L.h@{SIM800L.h}}
+\doxysubsubsection{\texorpdfstring{send\_server()}{send\_server()}}
+{\footnotesize\ttfamily \label{_s_i_m800_l_8h_a6a13d6f8254f2d5724cd58e721a2a3d9} 
+void send\+\_\+server (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Envia uma mensagem ao servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em message} & Mensagem a ser enviada ao servidor \\
+\hline
+\end{DoxyParams}

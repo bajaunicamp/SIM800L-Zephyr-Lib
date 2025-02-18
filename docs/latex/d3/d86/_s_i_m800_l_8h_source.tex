@@ -1,0 +1,25 @@
+\doxysection{SIM800\+L.\+h}
+\hypertarget{_s_i_m800_l_8h_source}{}\label{_s_i_m800_l_8h_source}\index{inc/SIM800L.h@{inc/SIM800L.h}}
+\mbox{\hyperlink{_s_i_m800_l_8h}{Ir para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SIM800L\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SIM800L\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}zephyr/drivers/uart.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db}{OPERADORA}}\{\mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dba7d875ca5d8cd7d6ad4ec679a3c301da3}{TIM}},\ \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbabd126c6febee221aaf6e3945dd74083a}{VIVO}},\ \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbab89d6ea09a98c6e094ac51795dad8b4a}{CLARO}},\ \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3dbaaaf8d1683a4b72d61d07c3dfc6b10999}{OUTRO}}\};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__server}{s\_server}}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *\mbox{\hyperlink{structs__server_a43e4ce3ebaf04d6a7b975adc96cb064f}{dev}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structs__server_adcda4113d19b00fef0e0f219212e41b0}{buffer}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__server_a6a6b8406964925141f9630245d786cb1}{buffer\_size}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structs__server_a93783023ff9e0d0082b2e7de1a0a1f7c}{connected}};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_i_m800_l_8h_a5eabcb207695d15a38aac4c2c91de903}{init\_server}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ port,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_s_i_m800_l_8h_a540d9673a7a4d37ad7aa163de196b3db}{OPERADORA}}\ op);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_i_m800_l_8h_a6a13d6f8254f2d5724cd58e721a2a3d9}{send\_server}}(\textcolor{keywordtype}{char}\ *message);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

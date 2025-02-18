@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SIM800L - GPRS: Referência da Estrutura s_server</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SIM800L - GPRS
+   </div>
+   <div id="projectbrief">Biblioteca para ZephyrRTOS que permite fácil personalização do GPRS para a equipe UNICAMP Baja SAE</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d0/de9/structs__server.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
+<a href="../../d6/d3d/structs__server-members.html">Lista de todos os Membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência da Estrutura s_server</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Representa a conexão UART com o SIM800L.  
+ <a href="#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/d86/_s_i_m800_l_8h_source.html">SIM800L.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:a43e4ce3ebaf04d6a7b975adc96cb064f" id="r_a43e4ce3ebaf04d6a7b975adc96cb064f"><td class="memItemLeft" align="right" valign="top">const struct device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43e4ce3ebaf04d6a7b975adc96cb064f">dev</a></td></tr>
+<tr class="memdesc:a43e4ce3ebaf04d6a7b975adc96cb064f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Referência ao device da device tree que representa o canal UART sendo usado.  <br /></td></tr>
+<tr class="separator:a43e4ce3ebaf04d6a7b975adc96cb064f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcda4113d19b00fef0e0f219212e41b0" id="r_adcda4113d19b00fef0e0f219212e41b0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcda4113d19b00fef0e0f219212e41b0">buffer</a></td></tr>
+<tr class="memdesc:adcda4113d19b00fef0e0f219212e41b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer no qual serão registradas mensagens recebidas através de callback.  <br /></td></tr>
+<tr class="separator:adcda4113d19b00fef0e0f219212e41b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a6b8406964925141f9630245d786cb1" id="r_a6a6b8406964925141f9630245d786cb1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a6b8406964925141f9630245d786cb1">buffer_size</a></td></tr>
+<tr class="memdesc:a6a6b8406964925141f9630245d786cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de caracteres do buffer que armazena as mensagens recebidas por callback.  <br /></td></tr>
+<tr class="separator:a6a6b8406964925141f9630245d786cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93783023ff9e0d0082b2e7de1a0a1f7c" id="r_a93783023ff9e0d0082b2e7de1a0a1f7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93783023ff9e0d0082b2e7de1a0a1f7c">connected</a></td></tr>
+<tr class="memdesc:a93783023ff9e0d0082b2e7de1a0a1f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booleano que registra se há conexão com o servidor.  <br /></td></tr>
+<tr class="separator:a93783023ff9e0d0082b2e7de1a0a1f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Representa a conexão UART com o SIM800L. </p>
+</div><h2 class="groupheader">Atributos</h2>
+<a id="adcda4113d19b00fef0e0f219212e41b0" name="adcda4113d19b00fef0e0f219212e41b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcda4113d19b00fef0e0f219212e41b0">&#9670;&#160;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* s_server::buffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buffer no qual serão registradas mensagens recebidas através de callback. </p>
+
+</div>
+</div>
+<a id="a6a6b8406964925141f9630245d786cb1" name="a6a6b8406964925141f9630245d786cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a6b8406964925141f9630245d786cb1">&#9670;&#160;</a></span>buffer_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int s_server::buffer_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Número de caracteres do buffer que armazena as mensagens recebidas por callback. </p>
+
+</div>
+</div>
+<a id="a93783023ff9e0d0082b2e7de1a0a1f7c" name="a93783023ff9e0d0082b2e7de1a0a1f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93783023ff9e0d0082b2e7de1a0a1f7c">&#9670;&#160;</a></span>connected</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool s_server::connected</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Booleano que registra se há conexão com o servidor. </p>
+
+</div>
+</div>
+<a id="a43e4ce3ebaf04d6a7b975adc96cb064f" name="a43e4ce3ebaf04d6a7b975adc96cb064f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43e4ce3ebaf04d6a7b975adc96cb064f">&#9670;&#160;</a></span>dev</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct device* s_server::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Referência ao device da device tree que representa o canal UART sendo usado. </p>
+
+</div>
+</div>
+<hr/>A documentação para essa estrutura foi gerada a partir do seguinte arquivo:<ul>
+<li>inc/<a class="el" href="../../d3/d86/_s_i_m800_l_8h_source.html">SIM800L.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d0/de9/structs__server.html">s_server</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
